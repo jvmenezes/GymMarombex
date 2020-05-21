@@ -1,0 +1,63 @@
+﻿@model IEnumerable<GymMarombex.Models.Avaliacoes>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Alunos.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Fisioterapeutas.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.InfoAnamnese)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ExameDobrasCutaneas)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ExameErgometrico)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataRealizacao)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Alunos.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Fisioterapeutas.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.InfoAnamnese)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ExameDobrasCutaneas)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ExameErgometrico)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataRealizacao)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.AvaliacaoID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.AvaliacaoID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.AvaliacaoID })
+        </td>
+    </tr>
+}
+
+</table>

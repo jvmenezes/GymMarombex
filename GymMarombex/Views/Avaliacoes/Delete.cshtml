@@ -1,0 +1,72 @@
+﻿@model GymMarombex.Models.Avaliacoes
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Avaliacoes</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Alunos.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Alunos.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fisioterapeutas.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fisioterapeutas.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InfoAnamnese)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InfoAnamnese)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ExameDobrasCutaneas)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ExameDobrasCutaneas)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ExameErgometrico)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ExameErgometrico)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataRealizacao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataRealizacao)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

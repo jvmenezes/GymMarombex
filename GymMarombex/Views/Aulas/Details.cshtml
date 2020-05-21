@@ -1,0 +1,50 @@
+﻿@model GymMarombex.Models.Aulas
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Aulas</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Descricao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Descricao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HoraInicio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HoraInicio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DuracaoMinutos)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DuracaoMinutos)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DiasDaSemana)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DiasDaSemana)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.AulaID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
