@@ -1,12 +1,17 @@
-﻿using System.Data.Entity;
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Data.Entity;
 using System.Linq;
 using System.Net;
+using System.Web;
 using System.Web.Mvc;
 using GymMarombex.DAL;
 using GymMarombex.Models;
 
-namespace GymMarombex.Controllers {
-  public class PerfisController : Controller
+namespace GymMarombex.Controllers
+{
+    public class PerfisController : Controller
     {
         private EFContext db = new EFContext();
 

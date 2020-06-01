@@ -51,6 +51,8 @@
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -117,84 +119,83 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Web.config" />
-    <Content Include="Views\Avaliacoes\Create.cshtml" />
-    <Content Include="Views\Avaliacoes\Delete.cshtml" />
-    <Content Include="Views\Avaliacoes\Details.cshtml" />
-    <Content Include="Views\Avaliacoes\Edit.cshtml" />
-    <Content Include="Views\Avaliacoes\Index.cshtml" />
-    <Content Include="Views\AvisoFerias\Create.cshtml" />
-    <Content Include="Views\AvisoFerias\Delete.cshtml" />
-    <Content Include="Views\AvisoFerias\Details.cshtml" />
-    <Content Include="Views\AvisoFerias\Edit.cshtml" />
-    <Content Include="Views\AvisoFerias\Index.cshtml" />
-    <Content Include="Views\DadoFinanceiros\Create.cshtml" />
-    <Content Include="Views\DadoFinanceiros\Delete.cshtml" />
-    <Content Include="Views\DadoFinanceiros\Details.cshtml" />
-    <Content Include="Views\DadoFinanceiros\Edit.cshtml" />
-    <Content Include="Views\DadoFinanceiros\Index.cshtml" />
-    <Content Include="Views\FormasPagmtos\Create.cshtml" />
-    <Content Include="Views\FormasPagmtos\Delete.cshtml" />
-    <Content Include="Views\FormasPagmtos\Details.cshtml" />
-    <Content Include="Views\FormasPagmtos\Edit.cshtml" />
-    <Content Include="Views\FormasPagmtos\Index.cshtml" />
-    <Content Include="Views\Perfis\Create.cshtml" />
-    <Content Include="Views\Perfis\Delete.cshtml" />
-    <Content Include="Views\Perfis\Details.cshtml" />
-    <Content Include="Views\Perfis\Edit.cshtml" />
-    <Content Include="Views\Perfis\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AlunoAulasController.cs" />
+    <Compile Include="Controllers\AlunosController.cs" />
+    <Compile Include="Controllers\AulasController.cs" />
+    <Compile Include="Controllers\AvaliacoesController.cs" />
+    <Compile Include="Controllers\AvisoFeriasController.cs" />
+    <Compile Include="Controllers\FormasPagmtosController.cs" />
+    <Compile Include="Controllers\FuncionariosController.cs" />
+    <Compile Include="Controllers\PerfisController.cs" />
+    <Compile Include="Controllers\PlanosController.cs" />
+    <Compile Include="DAL\EFContext.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AlunoAula.cs" />
+    <Compile Include="Models\Alunos.cs" />
+    <Compile Include="Models\Aulas.cs" />
+    <Compile Include="Models\Avaliacoes.cs" />
+    <Compile Include="Models\AvisoFerias.cs" />
+    <Compile Include="Models\FormasPagmtos.cs" />
+    <Compile Include="Models\Funcionarios.cs" />
+    <Compile Include="Models\Perfis.cs" />
+    <Compile Include="Models\Planos.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Planos\Create.cshtml" />
     <Content Include="Views\Planos\Delete.cshtml" />
     <Content Include="Views\Planos\Details.cshtml" />
     <Content Include="Views\Planos\Edit.cshtml" />
     <Content Include="Views\Planos\Index.cshtml" />
-    <Content Include="Views\UsuarioAulas\Create.cshtml" />
-    <Content Include="Views\UsuarioAulas\Delete.cshtml" />
-    <Content Include="Views\UsuarioAulas\Details.cshtml" />
-    <Content Include="Views\UsuarioAulas\Edit.cshtml" />
-    <Content Include="Views\UsuarioAulas\Index.cshtml" />
-    <Content Include="Views\Usuarios\Create.cshtml" />
-    <Content Include="Views\Usuarios\Delete.cshtml" />
-    <Content Include="Views\Usuarios\Details.cshtml" />
-    <Content Include="Views\Usuarios\Edit.cshtml" />
-    <Content Include="Views\Usuarios\Index.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\AulasController.cs" />
-    <Compile Include="Controllers\AvaliacoesController.cs" />
-    <Compile Include="Controllers\AvisoFeriasController.cs" />
-    <Compile Include="Controllers\DadoFinanceirosController.cs" />
-    <Compile Include="Controllers\FormasPagmtosController.cs" />
-    <Compile Include="Controllers\PerfisController.cs" />
-    <Compile Include="Controllers\PlanosController.cs" />
-    <Compile Include="Controllers\UsuarioAulasController.cs" />
-    <Compile Include="Controllers\UsuariosController.cs" />
-    <Compile Include="DAL\EFContext.cs" />
-    <Compile Include="Global.asax.cs">
-      <DependentUpon>Global.asax</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Planos.cs" />
-    <Compile Include="Models\DadosFinanceiros.cs" />
-    <Compile Include="Models\AvisoFerias.cs" />
-    <Compile Include="Models\Avaliacoes.cs" />
-    <Compile Include="Models\Aulas.cs" />
-    <Compile Include="Models\FormasPagmtos.cs" />
-    <Compile Include="Models\Perfis.cs" />
-    <Compile Include="Models\UsuarioAula.cs" />
-    <Compile Include="Models\Usuarios.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\web.config" />
-    <None Include="packages.config" />
-    <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Alunos\Create.cshtml" />
+    <Content Include="Views\Alunos\Delete.cshtml" />
+    <Content Include="Views\Alunos\Details.cshtml" />
+    <Content Include="Views\Alunos\Edit.cshtml" />
+    <Content Include="Views\Alunos\Index.cshtml" />
+    <Content Include="Views\AvisoFerias\Create.cshtml" />
+    <Content Include="Views\AvisoFerias\Delete.cshtml" />
+    <Content Include="Views\AvisoFerias\Details.cshtml" />
+    <Content Include="Views\AvisoFerias\Edit.cshtml" />
+    <Content Include="Views\AvisoFerias\Index.cshtml" />
+    <Content Include="Views\FormasPagmtos\Create.cshtml" />
+    <Content Include="Views\FormasPagmtos\Delete.cshtml" />
+    <Content Include="Views\FormasPagmtos\Details.cshtml" />
+    <Content Include="Views\FormasPagmtos\Edit.cshtml" />
+    <Content Include="Views\FormasPagmtos\Index.cshtml" />
+    <Content Include="Views\Funcionarios\Create.cshtml" />
+    <Content Include="Views\Funcionarios\Delete.cshtml" />
+    <Content Include="Views\Funcionarios\Details.cshtml" />
+    <Content Include="Views\Funcionarios\Edit.cshtml" />
+    <Content Include="Views\Funcionarios\Index.cshtml" />
+    <Content Include="Views\AlunoAulas\Create.cshtml" />
+    <Content Include="Views\AlunoAulas\Delete.cshtml" />
+    <Content Include="Views\AlunoAulas\Details.cshtml" />
+    <Content Include="Views\AlunoAulas\Edit.cshtml" />
+    <Content Include="Views\AlunoAulas\Index.cshtml" />
+    <Content Include="Views\Perfis\Create.cshtml" />
+    <Content Include="Views\Perfis\Delete.cshtml" />
+    <Content Include="Views\Perfis\Details.cshtml" />
+    <Content Include="Views\Perfis\Edit.cshtml" />
+    <Content Include="Views\Perfis\Index.cshtml" />
     <Content Include="Views\Aulas\Create.cshtml" />
     <Content Include="Views\Aulas\Delete.cshtml" />
     <Content Include="Views\Aulas\Details.cshtml" />
     <Content Include="Views\Aulas\Edit.cshtml" />
     <Content Include="Views\Aulas\Index.cshtml" />
-    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Avaliacoes\Create.cshtml" />
+    <Content Include="Views\Avaliacoes\Delete.cshtml" />
+    <Content Include="Views\Avaliacoes\Details.cshtml" />
+    <Content Include="Views\Avaliacoes\Edit.cshtml" />
+    <Content Include="Views\Avaliacoes\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -204,6 +205,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

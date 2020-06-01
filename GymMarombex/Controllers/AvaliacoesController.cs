@@ -18,7 +18,7 @@ namespace GymMarombex.Controllers
         // GET: Avaliacoes
         public ActionResult Index()
         {
-            var avaliacoes = db.Avaliacoes.Include(a => a.Alunos).Include(a => a.Fisioterapeutas);
+            var avaliacoes = db.Avaliacoes.Include(a => a.Alunos).Include(a => a.Funcionarios);
             return View(avaliacoes.ToList());
         }
 
@@ -40,8 +40,8 @@ namespace GymMarombex.Controllers
         // GET: Avaliacoes/Create
         public ActionResult Create()
         {
-            ViewBag.AlunoID = new SelectList(db.Usuarios, "UsuarioID", "Nome");
-            ViewBag.FisioterapeutaID = new SelectList(db.Usuarios, "UsuarioID", "Nome");
+            ViewBag.AlunoID = new SelectList(db.Alunos, "AlunoID", "Nome");
+            ViewBag.FisioterapeutaID = new SelectList(db.Funcionarios, "FuncionarioID", "Nome");
             return View();
         }
 
@@ -59,8 +59,8 @@ namespace GymMarombex.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.AlunoID = new SelectList(db.Usuarios, "UsuarioID", "Nome", avaliacoes.AlunoID);
-            ViewBag.FisioterapeutaID = new SelectList(db.Usuarios, "UsuarioID", "Nome", avaliacoes.FisioterapeutaID);
+            ViewBag.AlunoID = new SelectList(db.Alunos, "AlunoID", "Nome", avaliacoes.AlunoID);
+            ViewBag.FisioterapeutaID = new SelectList(db.Funcionarios, "FuncionarioID", "Nome", avaliacoes.FisioterapeutaID);
             return View(avaliacoes);
         }
 
@@ -76,8 +76,8 @@ namespace GymMarombex.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.AlunoID = new SelectList(db.Usuarios, "UsuarioID", "Nome", avaliacoes.AlunoID);
-            ViewBag.FisioterapeutaID = new SelectList(db.Usuarios, "UsuarioID", "Nome", avaliacoes.FisioterapeutaID);
+            ViewBag.AlunoID = new SelectList(db.Alunos, "AlunoID", "Nome", avaliacoes.AlunoID);
+            ViewBag.FisioterapeutaID = new SelectList(db.Funcionarios, "FuncionarioID", "Nome", avaliacoes.FisioterapeutaID);
             return View(avaliacoes);
         }
 
@@ -94,8 +94,8 @@ namespace GymMarombex.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.AlunoID = new SelectList(db.Usuarios, "UsuarioID", "Nome", avaliacoes.AlunoID);
-            ViewBag.FisioterapeutaID = new SelectList(db.Usuarios, "UsuarioID", "Nome", avaliacoes.FisioterapeutaID);
+            ViewBag.AlunoID = new SelectList(db.Alunos, "AlunoID", "Nome", avaliacoes.AlunoID);
+            ViewBag.FisioterapeutaID = new SelectList(db.Funcionarios, "FuncionarioID", "Nome", avaliacoes.FisioterapeutaID);
             return View(avaliacoes);
         }
 

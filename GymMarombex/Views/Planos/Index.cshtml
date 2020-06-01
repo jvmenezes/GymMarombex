@@ -15,10 +15,7 @@
             @Html.DisplayNameFor(model => model.Descricao)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.DataInicio)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DataFim)
+            @Html.DisplayNameFor(model => model.ValorTotal)
         </th>
         <th></th>
     </tr>
@@ -29,10 +26,7 @@
             @Html.DisplayFor(modelItem => item.Descricao)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.DataInicio)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DataFim)
+            @Html.DisplayFor(modelItem => item.ValorTotal)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.PlanoID }) |

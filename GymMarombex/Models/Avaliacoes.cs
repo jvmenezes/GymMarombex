@@ -1,21 +1,34 @@
-﻿using System;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+namespace GymMarombex.Models
+{
+    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+    using System.Data.Entity.Spatial;
 
-namespace GymMarombex.Models {
-  public class Avaliacoes {
-	[Key]
-	public int AvaliacaoID { get; set; }
-	public string InfoAnamnese { get; set; }
-	public string ExameDobrasCutaneas { get; set; }
-	public string ExameErgometrico { get; set; }
-	public DateTime DataRealizacao { get; set; }
-	public int AlunoID { get; set; }
-	[ForeignKey("AlunoID")]
-	public virtual Usuarios Alunos { get; set; }
+    public partial class Avaliacoes
+    {
+        [Key]
+        public int AvaliacaoID { get; set; }
 
-	public int FisioterapeutaID { get; set; }
-	[ForeignKey("FisioterapeutaID")]
-	public virtual Usuarios Fisioterapeutas { get; set; }
-  }
+        [StringLength(5000)]
+        public string InfoAnamnese { get; set; }
+
+        [StringLength(5000)]
+        public string ExameDobrasCutaneas { get; set; }
+
+        [StringLength(5000)]
+        public string ExameErgometrico { get; set; }
+
+        public DateTime DataRealizacao { get; set; }
+
+        public int AlunoID { get; set; }
+
+        public int FisioterapeutaID { get; set; }
+
+        public virtual Alunos Alunos { get; set; }
+
+		[ForeignKey("FisioterapeutaID")]
+        public virtual Funcionarios Funcionarios { get; set; }
+    }
 }

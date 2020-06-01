@@ -1,0 +1,141 @@
+﻿@model IEnumerable<GymMarombex.Models.Alunos>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.AvisoFerias.DescricaoMotivo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FormasPagmtos.Descricao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Planos.Descricao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CPF)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RG)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Endereco)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Login)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Senha)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataCadastro)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataUltimoAcesso)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MelhorDiaMesPagmto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataPrimeiroPagmto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataUltimoPagmto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ValorTotalPago)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.QtdParcelas)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ValorParcela)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumeroParcelaAtual)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ativo)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.AvisoFerias.DescricaoMotivo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FormasPagmtos.Descricao)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Planos.Descricao)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CPF)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RG)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Endereco)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Login)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Senha)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataCadastro)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataUltimoAcesso)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MelhorDiaMesPagmto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataPrimeiroPagmto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataUltimoPagmto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ValorTotalPago)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.QtdParcelas)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ValorParcela)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumeroParcelaAtual)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ativo)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.AlunoID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.AlunoID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.AlunoID })
+        </td>
+    </tr>
+}
+
+</table>

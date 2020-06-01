@@ -18,7 +18,8 @@ namespace GymMarombex.Controllers
         // GET: Aulas
         public ActionResult Index()
         {
-            return View(db.Aulas.ToList());
+            var aulas = db.Aulas.Include(a => a.Funcionarios);
+            return View(aulas.ToList());
         }
 
         // GET: Aulas/Details/5
@@ -39,6 +40,7 @@ namespace GymMarombex.Controllers
         // GET: Aulas/Create
         public ActionResult Create()
         {
+            ViewBag.InstrutorID = new SelectList(db.Funcionarios, "FuncionarioID", "Nome");
             return View();
         }
 
@@ -47,7 +49,7 @@ namespace GymMarombex.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "AulaID,Descricao,HoraInicio,DuracaoMinutos,DiasDaSemana")] Aulas aulas)
+        public ActionResult Create([Bind(Include = "AulaID,Descricao,HoraInicio,DuracaoMinutos,DiasDaSemana,InstrutorID")] Aulas aulas)
         {
             if (ModelState.IsValid)
             {
@@ -56,6 +58,7 @@ namespace GymMarombex.Controllers
                 return RedirectToAction("Index");
             }
 
+            ViewBag.InstrutorID = new SelectList(db.Funcionarios, "FuncionarioID", "Nome", aulas.InstrutorID);
             return View(aulas);
         }
 
@@ -71,6 +74,7 @@ namespace GymMarombex.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.InstrutorID = new SelectList(db.Funcionarios, "FuncionarioID", "Nome", aulas.InstrutorID);
             return View(aulas);
         }
 
@@ -79,7 +83,7 @@ namespace GymMarombex.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "AulaID,Descricao,HoraInicio,DuracaoMinutos,DiasDaSemana")] Aulas aulas)
+        public ActionResult Edit([Bind(Include = "AulaID,Descricao,HoraInicio,DuracaoMinutos,DiasDaSemana,InstrutorID")] Aulas aulas)
         {
             if (ModelState.IsValid)
             {
@@ -87,6 +91,7 @@ namespace GymMarombex.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.InstrutorID = new SelectList(db.Funcionarios, "FuncionarioID", "Nome", aulas.InstrutorID);
             return View(aulas);
         }
 

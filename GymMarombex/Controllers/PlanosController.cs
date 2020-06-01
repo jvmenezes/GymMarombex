@@ -47,7 +47,7 @@ namespace GymMarombex.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "PlanoID,Descricao,DataInicio,DataFim")] Planos planos)
+        public ActionResult Create([Bind(Include = "PlanoID,Descricao,ValorTotal")] Planos planos)
         {
             if (ModelState.IsValid)
             {
@@ -79,7 +79,7 @@ namespace GymMarombex.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "PlanoID,Descricao,DataInicio,DataFim")] Planos planos)
+        public ActionResult Edit([Bind(Include = "PlanoID,Descricao,ValorTotal")] Planos planos)
         {
             if (ModelState.IsValid)
             {

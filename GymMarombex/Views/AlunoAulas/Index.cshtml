@@ -1,0 +1,39 @@
+﻿@model IEnumerable<GymMarombex.Models.AlunoAula>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Alunos.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Aulas.Descricao)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Alunos.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Aulas.Descricao)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.AlunoAulaID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.AlunoAulaID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.AlunoAulaID })
+        </td>
+    </tr>
+}
+
+</table>
