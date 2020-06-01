@@ -1,0 +1,13 @@
+/*** Estrutura da tabela dbo.FormasPagmtos ***/
+
+PRINT 'Criando tabela FormasPagmtos...'
+CREATE TABLE dbo.FormasPagmtos (
+FormaPagmtoID          INT IDENTITY(1,1) NOT NULL,
+Descricao              VARCHAR(50)       NOT NULL	/* Dinheiro ou Cartão */
+) ON [PRIMARY]
+
+/*** Constraints (Primary Key/Unique Indexes) da tabela dbo.FormasPagmtos.CNS ***/
+PRINT 'Criando chave primária PK_FormasPagmtos na tabela FormasPagmtos...'
+ALTER TABLE dbo.FormasPagmtos ADD CONSTRAINT PK_FormasPagmtos
+	PRIMARY KEY CLUSTERED (FormaPagmtoID) ON [PRIMARY]
+

@@ -1,0 +1,13 @@
+/*** Estrutura da tabela dbo.Perfis ***/
+
+PRINT 'Criando tabela Perfis...'
+CREATE TABLE dbo.Perfis (
+PerfilID         INT IDENTITY(1,1) NOT NULL ,
+Descricao        VARCHAR(50)       NOT NULL
+) ON [PRIMARY] 
+
+/*** Constraints (Primary Key/Unique Indexes) da tabela dbo.Perfis.CNS ***/
+PRINT 'Criando chave primária PK_Perfis na tabela Perfis...'
+ALTER TABLE dbo.Perfis ADD CONSTRAINT PK_Perfis
+	PRIMARY KEY CLUSTERED (PerfilID) ON [PRIMARY]
+

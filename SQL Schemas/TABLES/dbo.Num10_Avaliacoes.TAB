@@ -1,0 +1,29 @@
+/*** Estrutura da tabela dbo.Avaliacoes ***/
+
+PRINT 'Criando tabela Avaliacoes...'
+CREATE TABLE dbo.Avaliacoes (
+AvaliacaoID            INT IDENTITY(1,1) NOT NULL,
+InfoAnamnese           VARCHAR(5000)     NULL,
+ExameDobrasCutaneas    VARCHAR(5000)     NULL,
+ExameErgometrico       VARCHAR(5000)     NULL,
+DataRealizacao         DATETIME          NOT NULL,
+AlunoID                INT               NOT NULL,
+FisioterapeutaID       INT               NOT NULL	
+) ON [PRIMARY] 
+
+/*** Constraints (Primary Key/Unique Indexes) da tabela dbo.Avaliacoes.CNS ***/
+PRINT 'Criando chave primária PK_Avaliacoes na tabela Avaliacoes...'
+ALTER TABLE dbo.Avaliacoes ADD CONSTRAINT PK_Avaliacoes
+	PRIMARY KEY CLUSTERED (AvaliacaoID) ON [PRIMARY]
+
+ /*** Foreign Keys da tabela dbo.Avaliacoes.FKS ***/
+PRINT 'Criando ForeignKey FK_Avaliacoes_to_Alunos_via_AlunoID na tabela Avaliacoes...'
+ALTER TABLE dbo.Avaliacoes ADD CONSTRAINT FK_Avaliacoes_to_Alunos_via_AlunoID
+	FOREIGN KEY (AlunoID) 
+		REFERENCES dbo.Alunos (AlunoID)
+
+PRINT 'Criando ForeignKey FK_Avaliacoes_to_Funcionarios_via_FisioterapeutaID na tabela Avaliacoes...'
+ALTER TABLE dbo.Avaliacoes ADD CONSTRAINT FK_Avaliacoes_to_Funcionarios_via_FisioterapeutaID
+	FOREIGN KEY (FisioterapeutaID) 
+		REFERENCES dbo.Funcionarios (FuncionarioID)
+

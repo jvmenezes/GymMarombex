@@ -1,0 +1,54 @@
+/*** Estrutura da tabela dbo.Alunos ***/
+
+PRINT 'Criando tabela Alunos...'
+CREATE TABLE dbo.Alunos (
+AlunoID          INT IDENTITY(1,1)   NOT NULL, --Será usado como numero de matricula
+Nome               VARCHAR(200)      NOT NULL,
+CPF                VARCHAR(50)       NOT NULL,
+RG                 VARCHAR(50)       NOT NULL,
+Endereco           VARCHAR(200)      NOT NULL,
+Login              VARCHAR(30)       NOT NULL,
+Senha              VARCHAR(50)       NOT NULL,
+DataCadastro       DATETIME          NOT NULL,
+DataUltimoAcesso   DATETIME          NULL,
+MelhorDiaMesPagmto  INT              NOT NULL, -- Dia 5 de todo mês
+DataPrimeiroPagmto  DATETIME         NULL,  --05/03/2020
+DataUltimoPagmto    DATETIME         NULL,  
+ValorTotalPago      FLOAT            NULL,   --0 Reais
+QtdParcelas         INT              NULL,   -- 12 Meses
+ValorParcela        FLOAT            NULL,	 -- 60 Reais
+NumeroParcelaAtual  INT              NULL,   -- Num 1
+Ativo				BIT				 NOT NULL DEFAULT 0,
+PlanoID             INT              NOT NULL,
+FormaPagmtoID       INT              NOT NULL,
+AvisoFeriasID       INT              NULL
+) ON [PRIMARY] 
+
+/*** Constraints (Primary Key/Unique Indexes) da tabela dbo.Alunos.CNS ***/
+PRINT 'Criando chave primária PK_Alunos na tabela Alunos...'
+ALTER TABLE dbo.Alunos ADD CONSTRAINT PK_Alunos 
+	PRIMARY KEY CLUSTERED (AlunoID) ON [PRIMARY]
+ 
+ /*** Foreign Keys da tabela dbo.Alunos.FKS ***/
+PRINT 'Criando ForeignKey FK_Alunos_to_Planos_via_PlanoID na tabela Alunos...'
+ALTER TABLE dbo.Alunos ADD CONSTRAINT FK_Alunos_to_Planos_via_PlanoID 
+	FOREIGN KEY (PlanoID) 
+		REFERENCES dbo.Planos (PlanoID)
+
+PRINT 'Criando ForeignKey FK_Alunos_to_FormasPagmtos_via_FormaPagmtoID na tabela Alunos...'
+ALTER TABLE dbo.Alunos ADD CONSTRAINT FK_Alunos_to_FormasPagmtos_via_FormaPagmtoID 
+	FOREIGN KEY (FormaPagmtoID) 
+		REFERENCES dbo.FormasPagmtos (FormaPagmtoID)
+		
+PRINT 'Criando ForeignKey FK_Alunos_to_AvisoFerias_via_AvisoFeriasID na tabela Alunos...'
+ALTER TABLE dbo.Alunos ADD CONSTRAINT FK_Alunos_to_AvisoFerias_via_AvisoFeriasID 
+	FOREIGN KEY (AvisoFeriasID) 
+		REFERENCES dbo.AvisoFerias (AvisoFeriasID)
+		
+/*** Índices e Estatísticas da tabela dbo.Alunos.IDX ***/
+PRINT 'Criando índice IDX_NC_Login na tabela Alunos...'
+CREATE NONCLUSTERED 
+	INDEX IDX_NC_Login ON dbo.Alunos(Login) ON [PRIMARY]  
+
+
+

@@ -1,0 +1,6 @@
+CREATE DATABASE GymMarombex
+GO
+
+USE GymMarombex
+GO
+

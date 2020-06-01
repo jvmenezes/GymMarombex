@@ -1,0 +1,14 @@
+/*** Estrutura da tabela dbo.Planos ***/
+
+PRINT 'Criando tabela Planos...'
+CREATE TABLE dbo.Planos (
+PlanoID          INT IDENTITY(1,1)  NOT NULL,
+Descricao        VARCHAR(50)  NOT NULL,
+ValorTotal       FLOAT             NULL
+) ON [PRIMARY] 
+
+/*** Constraints (Primary Key/Unique Indexes) da tabela dbo.Planos.CNS ***/
+PRINT 'Criando chave primária PK_Planos na tabela Planos...'
+ALTER TABLE dbo.Planos ADD CONSTRAINT PK_Planos
+	PRIMARY KEY CLUSTERED (PlanoID) ON [PRIMARY]
+	

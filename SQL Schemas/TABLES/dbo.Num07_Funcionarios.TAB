@@ -1,0 +1,34 @@
+/*** Estrutura da tabela dbo.Funcionarios ***/
+
+PRINT 'Criando tabela Funcionarios...'
+CREATE TABLE dbo.Funcionarios (
+FuncionarioID      INT IDENTITY(1,1)  NOT NULL ,
+Nome               VARCHAR(200)      NOT NULL,
+CPF                VARCHAR(50)       NOT NULL,
+RG                 VARCHAR(50)       NOT NULL,
+Endereco           VARCHAR(200)      NOT NULL,
+Login              VARCHAR(30)       NOT NULL,
+Senha              VARCHAR(50)       NOT NULL,
+DataCadastro       DATETIME          NOT NULL,
+DataUltimoAcesso   DATETIME          NULL,
+TiposDeAtividades  VARCHAR(500)      NOT NULL,
+PerfilID           INT               NOT NULL
+) ON [PRIMARY] 
+
+/*** Constraints (Primary Key/Unique Indexes) da tabela dbo.Funcionarios.CNS ***/
+PRINT 'Criando chave primária PK_Funcionarios na tabela Funcionarios...'
+ALTER TABLE dbo.Funcionarios ADD CONSTRAINT PK_Funcionarios 
+	PRIMARY KEY CLUSTERED (FuncionarioID) ON [PRIMARY]
+		
+/*** Foreign Keys da tabela dbo.Funcionarios.FKS ***/
+PRINT 'Criando ForeignKey FK_Funcionarios_to_Perfis_via_PerfilID na tabela Funcionarios...'
+ALTER TABLE dbo.Funcionarios ADD CONSTRAINT FK_Funcionarios_to_Perfis_via_PerfilID 
+	FOREIGN KEY (PerfilID) 
+		REFERENCES dbo.Perfis (PerfilID)
+		
+/*** Índices e Estatísticas da tabela dbo.Funcionarios.IDX ***/
+PRINT 'Criando índice IDX_NC_Login na tabela Funcionarios...'
+CREATE NONCLUSTERED 
+	INDEX IDX_NC_Login ON dbo.Funcionarios(Login) ON [PRIMARY]
+	
+

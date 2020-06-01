@@ -1,0 +1,23 @@
+/*** Estrutura da tabela dbo.Aulas ***/
+
+PRINT 'Criando tabela Aulas...'
+CREATE TABLE dbo.Aulas (
+AulaID         INT IDENTITY(1,1)  NOT NULL,
+Descricao       VARCHAR(50)    NOT NULL,
+HoraInicio      TIME           NOT NULL,
+DuracaoMinutos  INT            NOT NULL,
+DiasDaSemana     VARCHAR(500)  NOT NULL,
+InstrutorID     INT            NOT NULL 
+) ON [PRIMARY]
+
+/*** Constraints (Primary Key/Unique Indexes) da tabela dbo.Aulas.CNS ***/
+PRINT 'Criando chave primária PK_Aulas na tabela Aulas...'
+ALTER TABLE dbo.Aulas ADD CONSTRAINT PK_Aulas
+	PRIMARY KEY CLUSTERED (AulaID) ON [PRIMARY]
+	
+ /*** Foreign Keys da tabela dbo.Aulas.FKS ***/
+PRINT 'Criando ForeignKey FK_Aulas_to_Funcionarios_via_InstrutorID na tabela Aulas...'
+ALTER TABLE dbo.Aulas ADD CONSTRAINT FK_Aulas_to_Funcionarios_via_InstrutorID
+	FOREIGN KEY (InstrutorID) 
+		REFERENCES dbo.Funcionarios (FuncionarioID)
+
