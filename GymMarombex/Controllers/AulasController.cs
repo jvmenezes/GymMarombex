@@ -11,8 +11,7 @@ using GymMarombex.Models;
 
 namespace GymMarombex.Controllers
 {
-    public class AulasController : Controller
-    {
+    public class AulasController : BaseController {
         private EFContext db = new EFContext();
 
         // GET: Aulas

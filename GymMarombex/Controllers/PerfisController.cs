@@ -11,7 +11,7 @@ using GymMarombex.Models;
 
 namespace GymMarombex.Controllers
 {
-    public class PerfisController : Controller
+    public class PerfisController : BaseController
     {
         private EFContext db = new EFContext();
 
