@@ -122,12 +122,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\BaseController.cs" />
-    <Compile Include="Controllers\AlunoAulasController.cs" />
     <Compile Include="Controllers\AlunosController.cs" />
     <Compile Include="Controllers\AulasController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\AlunoAulasController.cs" />
     <Compile Include="Controllers\AvaliacoesController.cs" />
-    <Compile Include="Controllers\AvisoFeriasController.cs" />
     <Compile Include="Controllers\FormasPagmtosController.cs" />
     <Compile Include="Controllers\FuncionariosController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
@@ -142,7 +141,6 @@
     <Compile Include="Models\Alunos.cs" />
     <Compile Include="Models\Aulas.cs" />
     <Compile Include="Models\Avaliacoes.cs" />
-    <Compile Include="Models\AvisoFerias.cs" />
     <Compile Include="Models\FormasPagmtos.cs" />
     <Compile Include="Models\Funcionarios.cs" />
     <Compile Include="Models\Perfis.cs" />
@@ -159,11 +157,6 @@
     <Content Include="Views\Planos\Details.cshtml" />
     <Content Include="Views\Planos\Edit.cshtml" />
     <Content Include="Views\Planos\Index.cshtml" />
-    <Content Include="Views\Alunos\Create.cshtml" />
-    <Content Include="Views\Alunos\Delete.cshtml" />
-    <Content Include="Views\Alunos\Details.cshtml" />
-    <Content Include="Views\Alunos\Edit.cshtml" />
-    <Content Include="Views\Alunos\Index.cshtml" />
     <Content Include="Views\AvisoFerias\Create.cshtml" />
     <Content Include="Views\AvisoFerias\Delete.cshtml" />
     <Content Include="Views\AvisoFerias\Details.cshtml" />
@@ -189,17 +182,22 @@
     <Content Include="Views\Perfis\Details.cshtml" />
     <Content Include="Views\Perfis\Edit.cshtml" />
     <Content Include="Views\Perfis\Index.cshtml" />
-    <Content Include="Views\Aulas\Create.cshtml" />
-    <Content Include="Views\Aulas\Delete.cshtml" />
-    <Content Include="Views\Aulas\Details.cshtml" />
-    <Content Include="Views\Aulas\Edit.cshtml" />
-    <Content Include="Views\Aulas\Index.cshtml" />
     <Content Include="Views\Avaliacoes\Create.cshtml" />
     <Content Include="Views\Avaliacoes\Delete.cshtml" />
     <Content Include="Views\Avaliacoes\Details.cshtml" />
     <Content Include="Views\Avaliacoes\Edit.cshtml" />
     <Content Include="Views\Avaliacoes\Index.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Views\Aulas\Create.cshtml" />
+    <Content Include="Views\Aulas\Delete.cshtml" />
+    <Content Include="Views\Aulas\Details.cshtml" />
+    <Content Include="Views\Aulas\Edit.cshtml" />
+    <Content Include="Views\Aulas\Index.cshtml" />
+    <Content Include="Views\Alunos\Create.cshtml" />
+    <Content Include="Views\Alunos\Delete.cshtml" />
+    <Content Include="Views\Alunos\Details.cshtml" />
+    <Content Include="Views\Alunos\Edit.cshtml" />
+    <Content Include="Views\Alunos\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

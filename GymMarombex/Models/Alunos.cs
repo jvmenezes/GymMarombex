@@ -46,11 +46,11 @@ namespace GymMarombex.Models
 
         public DateTime? DataUltimoAcesso { get; set; }
 
-        public int MelhorDiaMesPagmto { get; set; }
-
-        public DateTime? DataPrimeiroPagmto { get; set; }
+        public int MelhorDiaMesPagmto { get; set; }        
 
         public DateTime? DataUltimoPagmto { get; set; }
+
+		public DateTime? DataProximoPagmto { get; set; }
 
         public double? ValorTotalPago { get; set; }
 
@@ -60,18 +60,21 @@ namespace GymMarombex.Models
 
         public int? NumeroParcelaAtual { get; set; }
 
+		[StringLength(500)]
+		public string FeriasDescricaoMotivo { get; set; }
+
+		public DateTime? FeriasDataInicio { get; set; }
+
+		public DateTime? FeriasDataFim { get; set; }
+
         public bool Ativo { get; set; }
 
         public int PlanoID { get; set; }
 
         public int FormaPagmtoID { get; set; }
 
-        public int? AvisoFeriasID { get; set; }
-
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<AlunoAula> AlunoAula { get; set; }
-
-        public virtual AvisoFerias AvisoFerias { get; set; }
 
         public virtual FormasPagmtos FormasPagmtos { get; set; }
 

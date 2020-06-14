@@ -1,23 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
+﻿using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
 using GymMarombex.DAL;
 using GymMarombex.Models;
 
-namespace GymMarombex.Controllers
-{
-    public class AlunosController : BaseController {
+namespace GymMarombex.Controllers {
+  public class AlunosController : BaseController {
         private EFContext db = new EFContext();
 
         // GET: Alunos
         public ActionResult Index()
         {
-            var alunos = db.Alunos.Include(a => a.AvisoFerias).Include(a => a.FormasPagmtos).Include(a => a.Planos);
+            var alunos = db.Alunos.Include(a => a.FormasPagmtos).Include(a => a.Planos);
             return View(alunos.ToList());
         }
 
@@ -39,7 +34,6 @@ namespace GymMarombex.Controllers
         // GET: Alunos/Create
         public ActionResult Create()
         {
-            ViewBag.AvisoFeriasID = new SelectList(db.AvisoFerias, "AvisoFeriasID", "DescricaoMotivo");
             ViewBag.FormaPagmtoID = new SelectList(db.FormasPagmtos, "FormaPagmtoID", "Descricao");
             ViewBag.PlanoID = new SelectList(db.Planos, "PlanoID", "Descricao");
             return View();
@@ -50,7 +44,7 @@ namespace GymMarombex.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "AlunoID,Nome,CPF,RG,Endereco,Login,Senha,DataCadastro,DataUltimoAcesso,MelhorDiaMesPagmto,DataPrimeiroPagmto,DataUltimoPagmto,ValorTotalPago,QtdParcelas,ValorParcela,NumeroParcelaAtual,Ativo,PlanoID,FormaPagmtoID,AvisoFeriasID")] Alunos alunos)
+        public ActionResult Create([Bind(Include = "AlunoID,Nome,CPF,RG,Endereco,Login,Senha,DataCadastro,DataUltimoAcesso,MelhorDiaMesPagmto,DataUltimoPagmto,DataProximoPagmto,ValorTotalPago,QtdParcelas,ValorParcela,NumeroParcelaAtual,FeriasDescricaoMotivo,FeriasDataInicio,FeriasDataFim,Ativo,PlanoID,FormaPagmtoID")] Alunos alunos)
         {
             if (ModelState.IsValid)
             {
@@ -59,7 +53,6 @@ namespace GymMarombex.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.AvisoFeriasID = new SelectList(db.AvisoFerias, "AvisoFeriasID", "DescricaoMotivo", alunos.AvisoFeriasID);
             ViewBag.FormaPagmtoID = new SelectList(db.FormasPagmtos, "FormaPagmtoID", "Descricao", alunos.FormaPagmtoID);
             ViewBag.PlanoID = new SelectList(db.Planos, "PlanoID", "Descricao", alunos.PlanoID);
             return View(alunos);
@@ -77,7 +70,6 @@ namespace GymMarombex.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.AvisoFeriasID = new SelectList(db.AvisoFerias, "AvisoFeriasID", "DescricaoMotivo", alunos.AvisoFeriasID);
             ViewBag.FormaPagmtoID = new SelectList(db.FormasPagmtos, "FormaPagmtoID", "Descricao", alunos.FormaPagmtoID);
             ViewBag.PlanoID = new SelectList(db.Planos, "PlanoID", "Descricao", alunos.PlanoID);
             return View(alunos);
@@ -88,7 +80,7 @@ namespace GymMarombex.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "AlunoID,Nome,CPF,RG,Endereco,Login,Senha,DataCadastro,DataUltimoAcesso,MelhorDiaMesPagmto,DataPrimeiroPagmto,DataUltimoPagmto,ValorTotalPago,QtdParcelas,ValorParcela,NumeroParcelaAtual,Ativo,PlanoID,FormaPagmtoID,AvisoFeriasID")] Alunos alunos)
+        public ActionResult Edit([Bind(Include = "AlunoID,Nome,CPF,RG,Endereco,Login,Senha,DataCadastro,DataUltimoAcesso,MelhorDiaMesPagmto,DataUltimoPagmto,DataProximoPagmto,ValorTotalPago,QtdParcelas,ValorParcela,NumeroParcelaAtual,FeriasDescricaoMotivo,FeriasDataInicio,FeriasDataFim,Ativo,PlanoID,FormaPagmtoID")] Alunos alunos)
         {
             if (ModelState.IsValid)
             {
@@ -96,7 +88,6 @@ namespace GymMarombex.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.AvisoFeriasID = new SelectList(db.AvisoFerias, "AvisoFeriasID", "DescricaoMotivo", alunos.AvisoFeriasID);
             ViewBag.FormaPagmtoID = new SelectList(db.FormasPagmtos, "FormaPagmtoID", "Descricao", alunos.FormaPagmtoID);
             ViewBag.PlanoID = new SelectList(db.Planos, "PlanoID", "Descricao", alunos.PlanoID);
             return View(alunos);

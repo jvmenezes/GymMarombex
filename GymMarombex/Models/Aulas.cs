@@ -25,8 +25,7 @@ namespace GymMarombex.Models
 
         public int DuracaoMinutos { get; set; }
 
-        [Required]
-        [StringLength(500)]
+        [Required]        
         public int DiasDaSemana { get; set; }
 
         public int InstrutorID { get; set; }

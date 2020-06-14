@@ -20,7 +20,6 @@ namespace GymMarombex.DAL {
 	public DbSet<Alunos> Alunos { get; set; }
 	public DbSet<Aulas> Aulas { get; set; }
 	public DbSet<Avaliacoes> Avaliacoes { get; set; }
-	public DbSet<AvisoFerias> AvisoFerias { get; set; }
 	public DbSet<FormasPagmtos> FormasPagmtos { get; set; }
 	public DbSet<Funcionarios> Funcionarios { get; set; }
 	public DbSet<Perfis> Perfis { get; set; }
