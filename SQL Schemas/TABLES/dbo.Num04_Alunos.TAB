@@ -42,11 +42,6 @@ ALTER TABLE dbo.Alunos ADD CONSTRAINT FK_Alunos_to_FormasPagmtos_via_FormaPagmto
 	FOREIGN KEY (FormaPagmtoID) 
 		REFERENCES dbo.FormasPagmtos (FormaPagmtoID)
 		
-PRINT 'Criando ForeignKey FK_Alunos_to_AvisoFerias_via_AvisoFeriasID na tabela Alunos...'
-ALTER TABLE dbo.Alunos ADD CONSTRAINT FK_Alunos_to_AvisoFerias_via_AvisoFeriasID 
-	FOREIGN KEY (AvisoFeriasID) 
-		REFERENCES dbo.AvisoFerias (AvisoFeriasID)
-		
 /*** Índices e Estatísticas da tabela dbo.Alunos.IDX ***/
 PRINT 'Criando índice IDX_NC_Login na tabela Alunos...'
 CREATE NONCLUSTERED 

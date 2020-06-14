@@ -6,6 +6,14 @@ AulaID         INT IDENTITY(1,1)  NOT NULL,
 Descricao       VARCHAR(50)    NOT NULL,
 HoraInicio      TIME           NOT NULL,
 DuracaoMinutos  INT            NOT NULL,
+/* Valor guardados em 
+Dias Da Semana:
+1 - Segunda
+2 - Terça
+4 - Quarta
+8 - Quinta
+16 - Sexta
+*/
 DiasDaSemana    INT            NOT NULL,
 InstrutorID     INT            NOT NULL 
 ) ON [PRIMARY]

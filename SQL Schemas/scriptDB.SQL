@@ -45,8 +45,8 @@ Senha              VARCHAR(50)       NOT NULL,
 DataCadastro       DATETIME          NOT NULL,
 DataUltimoAcesso   DATETIME          NULL,
 MelhorDiaMesPagmto  INT              NOT NULL, -- Dia 5 de todo mês
-DataPrimeiroPagmto  DATETIME         NULL,  --05/03/2020
 DataUltimoPagmto    DATETIME         NULL,  
+DataProximoPagmto   DATETIME         NULL,  --05/03/2020
 ValorTotalPago      FLOAT            NULL,   --0 Reais
 QtdParcelas         INT              NULL,   -- 12 Meses
 ValorParcela        FLOAT            NULL,	 -- 60 Reais
@@ -56,8 +56,7 @@ FeriasDataInicio          DATETIME          NULL,
 FeriasDataFim             DATETIME          NULL,
 Ativo				BIT				 NOT NULL DEFAULT 0,
 PlanoID             INT              NOT NULL,
-FormaPagmtoID       INT              NOT NULL,
-AvisoFeriasID       INT              NULL
+FormaPagmtoID       INT              NOT NULL
 ) ON [PRIMARY] 
 
 /*** Constraints (Primary Key/Unique Indexes) da tabela dbo.Alunos.CNS ***/
@@ -75,11 +74,6 @@ PRINT 'Criando ForeignKey FK_Alunos_to_FormasPagmtos_via_FormaPagmtoID na tabela
 ALTER TABLE dbo.Alunos ADD CONSTRAINT FK_Alunos_to_FormasPagmtos_via_FormaPagmtoID 
 	FOREIGN KEY (FormaPagmtoID) 
 		REFERENCES dbo.FormasPagmtos (FormaPagmtoID)
-		
-PRINT 'Criando ForeignKey FK_Alunos_to_AvisoFerias_via_AvisoFeriasID na tabela Alunos...'
-ALTER TABLE dbo.Alunos ADD CONSTRAINT FK_Alunos_to_AvisoFerias_via_AvisoFeriasID 
-	FOREIGN KEY (AvisoFeriasID) 
-		REFERENCES dbo.AvisoFerias (AvisoFeriasID)
 		
 /*** Índices e Estatísticas da tabela dbo.Alunos.IDX ***/
 PRINT 'Criando índice IDX_NC_Login na tabela Alunos...'
@@ -143,7 +137,7 @@ AulaID         INT IDENTITY(1,1)  NOT NULL,
 Descricao       VARCHAR(50)    NOT NULL,
 HoraInicio      TIME           NOT NULL,
 DuracaoMinutos  INT            NOT NULL,
-DiasDaSemana     VARCHAR(500)  NOT NULL,
+DiasDaSemana    INT            NOT NULL,
 InstrutorID     INT            NOT NULL 
 ) ON [PRIMARY]
 
