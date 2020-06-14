@@ -27,7 +27,7 @@ namespace GymMarombex.Models
 
         [Required]
         [StringLength(500)]
-        public string DiasDaSemana { get; set; }
+        public int DiasDaSemana { get; set; }
 
         public int InstrutorID { get; set; }
 

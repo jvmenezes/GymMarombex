@@ -4,21 +4,6 @@ GO
 USE GymMarombex
 GO
 
-/*** Estrutura da tabela dbo.AvisoFerias ***/
-
-PRINT 'Criando tabela AvisoFerias...'
-CREATE TABLE dbo.AvisoFerias (
-AvisoFeriasID         INT IDENTITY(1,1) NOT NULL,
-DescricaoMotivo       VARCHAR(500)      NOT NULL,
-DataInicio            DATETIME          NOT NULL,
-DataFim               DATETIME          NOT NULL
-) ON [PRIMARY]
-
-/*** Constraints (Primary Key/Unique Indexes) da tabela dbo.AvisoFerias.CNS ***/
-PRINT 'Criando chave primária PK_AvisoFerias na tabela AvisoFerias...'
-ALTER TABLE dbo.AvisoFerias ADD CONSTRAINT PK_AvisoFerias
-	PRIMARY KEY CLUSTERED (AvisoFeriasID) ON [PRIMARY]
-
 /*** Estrutura da tabela dbo.FormasPagmtos ***/
 
 PRINT 'Criando tabela FormasPagmtos...'
@@ -66,6 +51,9 @@ ValorTotalPago      FLOAT            NULL,   --0 Reais
 QtdParcelas         INT              NULL,   -- 12 Meses
 ValorParcela        FLOAT            NULL,	 -- 60 Reais
 NumeroParcelaAtual  INT              NULL,   -- Num 1
+FeriasDescricaoMotivo     VARCHAR(500)      NULL,
+FeriasDataInicio          DATETIME          NULL,
+FeriasDataFim             DATETIME          NULL,
 Ativo				BIT				 NOT NULL DEFAULT 0,
 PlanoID             INT              NOT NULL,
 FormaPagmtoID       INT              NOT NULL,

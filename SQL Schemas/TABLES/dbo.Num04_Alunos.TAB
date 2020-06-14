@@ -12,16 +12,18 @@ Senha              VARCHAR(50)       NOT NULL,
 DataCadastro       DATETIME          NOT NULL,
 DataUltimoAcesso   DATETIME          NULL,
 MelhorDiaMesPagmto  INT              NOT NULL, -- Dia 5 de todo mês
-DataPrimeiroPagmto  DATETIME         NULL,  --05/03/2020
 DataUltimoPagmto    DATETIME         NULL,  
+DataProximoPagmto   DATETIME         NULL,  --05/03/2020
 ValorTotalPago      FLOAT            NULL,   --0 Reais
 QtdParcelas         INT              NULL,   -- 12 Meses
 ValorParcela        FLOAT            NULL,	 -- 60 Reais
 NumeroParcelaAtual  INT              NULL,   -- Num 1
+FeriasDescricaoMotivo     VARCHAR(500)      NULL,
+FeriasDataInicio          DATETIME          NULL,
+FeriasDataFim             DATETIME          NULL,
 Ativo				BIT				 NOT NULL DEFAULT 0,
 PlanoID             INT              NOT NULL,
-FormaPagmtoID       INT              NOT NULL,
-AvisoFeriasID       INT              NULL
+FormaPagmtoID       INT              NOT NULL
 ) ON [PRIMARY] 
 
 /*** Constraints (Primary Key/Unique Indexes) da tabela dbo.Alunos.CNS ***/
