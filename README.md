@@ -1,9 +1,13 @@
 # GymMarombex
 GYM Marombex System 
 
-/****
-Usando técnica de FISRTCODE com EntityFramework e SQLServer
-****/
+## Usando técnica de FISRTCODE com EntityFramework e SQLServer:
+
+1. Teste
+    1.1. Fazendo o teste
+        1.1.1. Realizando o teste final
+2. Testando
+    
 
 <ul>
     <li>
