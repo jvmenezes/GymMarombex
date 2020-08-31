@@ -6,10 +6,10 @@ Usando técnica de FISRTCODE com EntityFramework e SQLServer
 ****/
 
 1. - Criar um arquivo de extensão UDF na área de trabalho
- 1.1. - Depois execute esse arquivo
- 1.2. - Na guia CONEXÃO
-   1.2.1. - No campo nome do servidor, coloque o IP do servidor ou o nome da sua máquina caso queira utilizar um banco local
-   1.2.2. - Inserir usuário e senha de acordo com a autenticação necessária
+    1.1. - Depois execute esse arquivo
+    1.2. - Na guia CONEXÃO
+        1.2.1. - No campo nome do servidor, coloque o IP do servidor ou o nome da sua máquina caso queira utilizar um banco local
+        1.2.2. - Inserir usuário e senha de acordo com a autenticação necessária
    1.2.3. - Selecione o banco de dados no servidor, caso não exista o banco, crie um para utilização
  1.3. - Clique no botão "Testar Conexão"
    1.3.1. - Se houver êxito, significa que tudo deu certo, sendo assim, salve e feche a janela
