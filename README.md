@@ -41,12 +41,12 @@ Usando técnica de FISRTCODE com EntityFramework e SQLServer
     </li>
     <li>
         2.0. - Utilize a "connectionString" pega no 1.4, e adicione no Web.Config o trecho abaixo dando um nome para a sua "connectionString"
+    </li>
         ```
           <connectionStrings>
-            <add name="MarombexConnectionString" connectionString="Password=123456;Persist Security Info=True;User ID=autoMEGenerator;Initial Catalog=Marombex;Data         Source=ME003153" providerName="System.Data.SqlClient"/>
-        ```
+            <add name="MarombexConnectionString" connectionString="Password=123456;Persist Security Info=True;User ID=autoMEGenerator;Initial Catalog=Marombex;Data         Source=ME003153" providerName="System.Data.SqlClient"/>        
           </connectionStrings>
-    </li>
+        ```
     <li>
         3. Ir em Package Manager e adicionar o pacote do EntityFramework
         Install-Package EntityFramework
