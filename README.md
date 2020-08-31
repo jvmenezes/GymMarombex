@@ -62,9 +62,7 @@ Usando técnica de FISRTCODE com EntityFramework e SQLServer
         Add-Migration Add_Coluna_Alunos_Idade  //Criará uma classe que será usada para persistir a estrutura de código na base de dados 
         update-database    //Atualiza a estrutura da base de dados a partir da classe criada no comando acima
     </li>
-<ul>
-
-</br>
+</ul>
 
 <https://www.youtube.com/watch?v=KQ3CAUnDaSM>
 Desc: Code First com ASP.NET MVC + Entity Framework
